@@ -614,13 +614,13 @@ get_genes_in_mod = function(mod_id, connected_gene_colors, gene_subset){
 }
 
 
-plot_z_score_heatmap_with_modules = function(z_scores, deg, col_order, annot_col, genes_in_modules, title){
+plot_z_score_heatmap_with_modules = function(z_scores, genes, col_order, annot_col, genes_in_modules, title){
     data = z_scores
-    deg = deg[deg %in% rownames(data)]
+    genes = genes[genes %in% rownames(data)]
     # get genes ordered by modules
     genes_in_mod = c()
     for(x in names(genes_in_modules)){
-        g_in_mod_id = intersect(genes_in_modules[[x]], deg)
+        g_in_mod_id = intersect(genes_in_modules[[x]], genes)
         new_c = rep(x, length(g_in_mod_id))
         names(new_c) = g_in_mod_id
         genes_in_mod = c(genes_in_mod, new_c)
