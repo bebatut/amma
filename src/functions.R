@@ -614,7 +614,7 @@ get_genes_in_mod = function(mod_id, connected_gene_colors, gene_subset){
 }
 
 
-plot_z_score_heatmap_with_modules = function(z_scores, genes, col_order, annot_col, genes_in_modules, title){
+plot_z_score_heatmap_with_modules = function(z_scores, genes, col_order, annot_col, genes_in_modules, title, show_rownames=FALSE){
     data = z_scores
     genes = genes[genes %in% rownames(data)]
     # get genes ordered by modules
@@ -632,7 +632,7 @@ plot_z_score_heatmap_with_modules = function(z_scores, genes, col_order, annot_c
     pheatmap(data[names(genes_in_mod), col_order],
             cluster_rows=F,
             cluster_cols=F,
-            show_rownames=F,
+            show_rownames=show_rownames,
             show_colnames=F,
             annotation_col=annot_col,
             annotation_row=data.frame( module=genes_in_mod),
