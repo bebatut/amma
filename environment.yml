@@ -47,4 +47,5 @@ dependencies:
 - r-ggfortify
 - r-sinaplot
 - r-factoextra
+- r-ggrepel
 
