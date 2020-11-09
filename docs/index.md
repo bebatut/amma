@@ -104,11 +104,13 @@ Age effect for both microbiotas, after controlling for sex | [<i class="far fa-f
 Age effect for the both sexes, after controlling for microbiota | [<i class="far fa-file-image"></i>]({{ site.baseurl }}{% link age-effect-sex.html %}) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/age-effect-sex.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/age-effect/age-sex)
 Age effect for the both sexes and both microbiotas | [<i class="far fa-file-image"></i>]({{ site.baseurl }}{% link age-effect-microbiota-sex.html %}) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/age-effect-microbiota-sex.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/age-effect/age-microbiota-sex)
 
-### Some postvisualizations
+### Extra-analyses
 
 Analysis | Report | Sources | Data & Results
 --- | --- | --- | ---
-Post-visualization | [<i class="far fa-file-image"></i>]({{ site.baseurl }}{% link postvisualization.html %}) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/postvisualization.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/age-effect/postvisualization)
+CML effect | [<i class="far fa-file-image"></i>]({{ site.baseurl }}{% link cml_vs_pbs.html %}) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/cml_vs_pbs.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/cml-effect)
+Post-visualization | [<i class="far fa-file-image"></i>]({{ site.baseurl }}{% link postvisualization.html %}) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/postvisualization.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/postvisualization)
+
 
 ## Microbiota analysis
 
