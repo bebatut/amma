@@ -10,10 +10,13 @@ We found that **microglia follow sex-dependent dynamics in aging**. This reposit
 ## Requirements
 
 - [conda](https://docs.conda.io/en/latest/miniconda.html)
+
+
+
 - Creation of the `conda` environment with all the requirements
 
     ```
-    $ conda env create -f environment.yml
+    $ make create-env
     ```
 
 - Launch the `conda` environment
@@ -69,7 +72,7 @@ Once it is finished:
 1. Launch Jupyter
 
     ```
-    $ jupyter notebook
+    $ make launch-jupyter
     ```
 
 3. Open [http://localhost:8888/tree/](http://localhost:8888/tree/)
@@ -120,23 +123,16 @@ These reports are stored in the `docs` folder and are linked on the website.
 
 ## Generate the website locally
 
-1. Install [Jekyll](https://jekyllrb.com/docs/installation/)
-2. Move to `docs` folder
+1. Install Install the website's dependencies:
 
     ```
-    $ cd docs
-    ```
-    
-3. Install the plugins for Jekyll (only once)
-
-    ```
-    $ bundle install
+    $ make install
     ```
 
-4. Serve the website locally
+2. Serve the website locally
 
     ```
-    $ bundle exec jekyll serve
+    $ make serve
     ```
 
-5. Open [http://127.0.0.1:4000/amma/](http://127.0.0.1:4000/amma/)
+3. Open [http://127.0.0.1:4000/amma/](http://127.0.0.1:4000/amma/)
