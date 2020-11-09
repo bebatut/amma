@@ -48,4 +48,5 @@ dependencies:
 - r-sinaplot
 - r-factoextra
 - r-ggrepel
+- ruby
 
