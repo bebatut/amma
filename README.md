@@ -19,12 +19,6 @@ We found that **microglia follow sex-dependent dynamics in aging**. This reposit
     $ make create-env
     ```
 
-- Launch the `conda` environment
-
-    ```
-    $ conda activate amma
-    ```
-
 ## Preparation of files from the sequencing facility
 
 1. Rename the files from the sequencing facility to follow the naming convention
@@ -116,7 +110,7 @@ Reports from the Jupyter notebooks are available there to show the different ste
 ## Generate HTML reports from the Jupyter Notebooks
 
 ```
-$ jupyter nbconvert --to=html src/*.ipynb --output-dir docs/
+$ make generate-reports
 ```
 
 These reports are stored in the `docs` folder and are linked on the website.
