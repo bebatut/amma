@@ -614,7 +614,7 @@ get_genes_in_mod = function(mod_id, connected_gene_colors, gene_subset){
 }
 
 
-plot_z_score_heatmap_with_modules = function(z_scores, genes, col_order, annot_col, genes_in_modules, title, show_rownames=FALSE){
+plot_z_score_heatmap_with_modules = function(z_scores, genes, col_order, annot_col, genes_in_modules, title, show_rownames=FALSE, fp=NULL, fontsize_row=10){
     data = z_scores
     genes = genes[genes %in% rownames(data)]
     # get genes ordered by modules
@@ -629,27 +629,36 @@ plot_z_score_heatmap_with_modules = function(z_scores, genes, col_order, annot_c
     data = data[names(genes_in_mod), col_order]
     annot_colors$module=pal2
     # plot heatmap
-    pheatmap(data[names(genes_in_mod), col_order],
-            cluster_rows=F,
-            cluster_cols=F,
-            show_rownames=show_rownames,
-            show_colnames=F,
-            annotation_col=annot_col,
-            annotation_row=data.frame( module=genes_in_mod),
-            annotation_colors = annot_colors,
-            color=rev(brewer.pal(11, "RdBu")),
-            breaks = seq(-3.5, 3.5, length=12),
-            main = title)
+    xx = pheatmap(data[names(genes_in_mod), col_order],
+        cluster_rows=F,
+        cluster_cols=F,
+        show_rownames=show_rownames,
+        show_colnames=F,
+        annotation_col=annot_col,
+        annotation_row=data.frame( module=genes_in_mod),
+        annotation_colors = annot_colors,
+        color=rev(brewer.pal(11, "RdBu")),
+        breaks = seq(-3.5, 3.5, length=12),
+        main = title,
+        fontsize_row=fontsize_row)
+    if(!is.null(fp)){
+        pdf(fp)
+        grid::grid.newpage()
+        grid::grid.draw(xx$gtable)
+        dev.off()
+    }else{
+        grid::grid.draw(xx$gtable)
+    }
 }
 
-plot_z_score_heatmap = function(z_scores, de_genes, col_order, annot_col, title, col_for_clust){
+plot_z_score_heatmap = function(z_scores, de_genes, col_order, annot_col, title, col_for_clust, fp=NULL){
     # get z_score for the DE genes and correct column order
     de_genes = de_genes[de_genes %in% rownames(z_scores)]
     data = z_scores[de_genes,]
     # cluster rows
     hc = hclust(dist(data[,col_for_clust]), method = "complete")
     # plot
-    pheatmap(data[hc$order, col_order],
+    xx = pheatmap(data[hc$order, col_order],
         cluster_rows=F,
         cluster_cols=F,
         show_rownames=F,
@@ -660,6 +669,14 @@ plot_z_score_heatmap = function(z_scores, de_genes, col_order, annot_col, title,
         color=rev(brewer.pal(11, "RdBu")),
         breaks = seq(-3.5, 3.5, length=12),
         main = title)
+    if(!is.null(fp)){
+        pdf(fp)
+        grid::grid.newpage()
+        grid::grid.draw(xx$gtable)
+        dev.off()
+    }else{
+        grid::grid.draw(xx$gtable)
+    }
 }
 
 
