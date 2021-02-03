@@ -1,0 +1,2 @@
+category	over_represented_pvalue	under_represented_pvalue	numDEInCat	numInCat	term	ontology
+GO:0061077	2.45729032148011e-06	0.99999984536102	7	45	chaperone-mediated protein folding	BP

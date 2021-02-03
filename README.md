@@ -71,12 +71,20 @@ Once it is finished:
 
 3. Open [http://localhost:8888/tree/](http://localhost:8888/tree/)
 2. Move to `src` in Jupyter
-3. Prepare the differential expression analysis
+4. Prepare the differential expression analyses
     1. Open `prepare_data.ipynb` and execute all cells
-    2. Open `dge_analysis.ipynb` and execute all cells
-    3. Open `pre-visualization.ipynb` and execute all cells
 
-4. Analyze the differentially expressed genes given different comparisons
+### Full analysis
+
+Data: SPF/GF, young/middle-aged/old, female/male
+
+1. Move to `full-data`
+
+2. Prepare the differential expression analysis
+    1. Open `dge_analysis.ipynb` and execute all cells
+    2. Open `pre-visualization.ipynb` and execute all cells
+
+2. Analyze the differentially expressed genes given different comparisons
     1.  Effect of the microbiota (GF vs SPF)
 
         Analysis | Notebook
@@ -100,6 +108,19 @@ Once it is finished:
         Age effect for both microbiotas, after controlling for sex | `age-effect-microbiota.ipynb`
         Age effect for the both sexes, after controlling for microbiota | `age-effect-sex.ipynb`
         Age effect for the both sexes and both microbiotas | `age-effect-microbiota-sex.ipynb`
+
+## Sex-driven aging analysis
+
+Data: SPF, young/middle-aged/old, female/male
+
+1. Move to `sex-driven-aging`
+2. Prepare the differential expression analysis
+    1. Open `dge_analysis.ipynb` and execute all cells
+    2. Open `pre-visualization.ipynb` and execute all cells
+
+## Microbiota driven analysis
+
+Data: SPF/GF, young/odl, male
 
 
 # Website

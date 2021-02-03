@@ -36,7 +36,7 @@ get_dge_results = function(x, dge, constrasts, sign_adj_pvalue = 0.05, sign_fc =
 
 extract_DEG_log2FC = function(in_l, dir_path){
     # create dir if it does not exist
-    full_dir_path = paste("../results/dge/", dir_path, sep="")
+    full_dir_path = dir_path#paste("../results/dge/", dir_path, sep="")
     dir.create(full_dir_path, showWarnings = FALSE)
     l = list()
     # extract the log2FC of the genes with significant p-value and significant p-value + FC
@@ -101,7 +101,7 @@ extract_DEG_stats = function(l, dir_path){
     a = barplot(m, main="", col=c("red", "darkblue"), beside=TRUE, las=1, border="white", axisnames = FALSE)
     text(a, 0, srt = 60, adj=1.1, xpd = TRUE, labels = rep(colnames(m), each=2), cex=0.65)
 
-    pdf(paste("../results/dge/", dir_path, 'deg_nb.pdf', sep=""))
+    pdf(paste(dir_path, 'deg_nb.pdf', sep=""))
     par(mar=c(10,3,3,3))
     a = barplot(m, main="", col=c("red", "darkblue"), beside=TRUE, las=1, border="white", axisnames = FALSE)
     text(a, 0, srt = 60, adj=1.1, xpd = TRUE, labels = rep(colnames(m), each=2), cex=0.65)
@@ -217,9 +217,9 @@ get_col_ramp_all_ont = function(mat, min_col, max_col){
     }
 }
 
-extract_GO_terms = function(l, dir_path){
+extract_GO_terms = function(l, dir_path, go_term_to_exclude_fp){
     # GO analysis
-    go_dir_path = paste("../results/dge/", dir_path, "go/", sep="")
+    go_dir_path = dir_path#paste("../results/dge/", dir_path, "go/", sep="")
     dir.create(go_dir_path, showWarnings = FALSE)
     l$GO = list()
     # calculate the over and under expressed GO categories among the DE genes
@@ -229,7 +229,7 @@ extract_GO_terms = function(l, dir_path){
     write.table(l$GO$over, paste(go_dir_path, "full_over_represented_GO", sep=""), sep = "\t", quote = FALSE)
     write.table(l$GO$under, paste(go_dir_path, "full_under_represented_GO", sep=""), sep = "\t", quote = FALSE)
     # exclude GO terms
-    go_term_to_exclude = read.table("../data/go_term_to_exclude.csv", h = F)$V1
+    go_term_to_exclude = read.table(go_term_to_exclude_fp, h = F)$V1
     l$GO$over = l$GO$over %>%
         filter(!category %in% go_term_to_exclude)
     write.table(l$over, paste(go_dir_path, "over_represented_GO", sep=""), sep = "\t", quote = FALSE, row.names = FALSE)
@@ -488,7 +488,7 @@ get_GO_network_col_all_ont = function(l, comp){
 
 extract_KEGG_pathways = function(l, dir_path){
     # KEGG analysis
-    kegg_dir_path = paste("../results/dge/", dir_path, "kegg/", sep="")
+    kegg_dir_path = dir_path#paste("../results/dge/", dir_path, "kegg/", sep="")
     dir.create(kegg_dir_path, showWarnings = FALSE)
     l$KEGG = list()  
     # calculate the over and under expressed KEGG pathways among the DE genes
@@ -509,12 +509,12 @@ extract_KEGG_pathways = function(l, dir_path){
 
 plot_kegg_pathways = function(kegg_cats, fc_deg, dir_path){
     dir.create(dir_path, showWarnings = FALSE)
+    tmp_fc_deg = fc_deg
+    fc_deg = tmp_fc_deg %>% select(-genes) %>% as.matrix()
+    rownames(fc_deg) = tmp_fc_deg %>% pull(genes)
     for(cat in kegg_cats){
         if(cat!="01100"){
-            suppressMessages(pathview(gene.data=fc_deg,
-                                      pathway.id=cat,
-                                      species="Mus musculus",
-                                      gene.idtype="Symbol"))
+            suppressMessages(pathview(gene.data=fc_deg, pathway.id=cat, species="Mus musculus", gene.idtype="SYMBOL"))
             if(dim(fc_deg)[2] > 1){
                 file.rename(from=paste("mmu", cat, ".pathview.multi.png",sep=""),
                             to=paste(dir_path,"mmu", cat, ".pathview.multi.png",sep=""))

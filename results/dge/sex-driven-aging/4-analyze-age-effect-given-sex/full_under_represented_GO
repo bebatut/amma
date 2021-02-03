@@ -1,0 +1,8 @@
+category	Middle-aged vs Young (Female)	Middle-aged vs Young (Male)	Old vs Young (Female)	Old vs Young (Male)	Old vs Middle-aged (Female)	Old vs Middle-aged (Male)	term	ontology
+1	GO:0003008	NA	NA	NA	0.000170194901532451	NA	7.83449434743129e-05	system process	BP
+2	GO:0034702	NA	NA	NA	0.0201360302855145	NA	NA	ion channel complex	CC
+3	GO:0050877	NA	NA	NA	4.59378315116455e-05	NA	0.000552184842473965	nervous system process	BP
+4	GO:0007600	NA	NA	NA	4.35871056245186e-07	NA	7.83449434743129e-05	sensory perception	BP
+5	GO:0007606	NA	NA	NA	1.08900923813913e-06	NA	0.041239896178937	sensory perception of chemical stimulus	BP
+6	GO:0004984	NA	NA	NA	2.95157821731236e-07	NA	7.83449434743129e-05	olfactory receptor activity	MF
+7	GO:0007608	NA	NA	NA	4.35871056245186e-07	NA	NA	sensory perception of smell	BP
