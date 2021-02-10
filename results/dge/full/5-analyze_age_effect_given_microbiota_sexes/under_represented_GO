@@ -1,0 +1,22 @@
+category	Middle-aged vs Young (Female, SPF)	Middle-aged vs Young (Female, GF)	Middle-aged vs Young (Male, SPF)	Middle-aged vs Young (Male, GF)	Old vs Young (Female, SPF)	Old vs Young (Female, GF)	Old vs Young (Male, SPF)	Old vs Young (Male, GF)	Old vs Middle-aged (Female, SPF)	Old vs Middle-aged (Female, GF)	Old vs Middle-aged (Male, SPF)	Old vs Middle-aged (Male, GF)	term	ontology
+GO:0044459	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.0101497516194117	plasma membrane part	CC
+GO:0016020	NA	NA	NA	NA	NA	NA	NA	0.0100089463293921	NA	NA	NA	0.00851292975451496	membrane	CC
+GO:0044425	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.00135020187906936	membrane part	CC
+GO:0007154	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.0323144661666562	cell communication	BP
+GO:0032501	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.0119909046937939	multicellular organismal process	BP
+GO:0031224	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.00184652354867584	intrinsic component of membrane	CC
+GO:0007267	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.0283346603572282	cell-cell signaling	BP
+GO:0007186	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.0101497516194117	G protein-coupled receptor signaling pathway	BP
+GO:0016021	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.0018828646993123	integral component of membrane	CC
+GO:0060089	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.0124705422723378	molecular transducer activity	MF
+GO:0031226	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.0415712849744352	intrinsic component of plasma membrane	CC
+GO:0038023	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.00425876603500089	signaling receptor activity	MF
+GO:0005887	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.0101497516194117	integral component of plasma membrane	CC
+GO:0099537	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.00912153326708822	trans-synaptic signaling	BP
+GO:0099536	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.0101497516194117	synaptic signaling	BP
+GO:0007268	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.00425876603500089	chemical synaptic transmission	BP
+GO:0098916	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.00425876603500089	anterograde trans-synaptic signaling	BP
+GO:0003008	NA	NA	NA	NA	NA	NA	0.00026547590908328	0.0189988805852172	NA	NA	NA	0.0165306038593685	system process	BP
+GO:0004888	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	0.0037393401663885	transmembrane signaling receptor activity	MF
+GO:0004984	NA	NA	NA	NA	NA	NA	1.23205367209315e-07	0.000341835326404552	NA	NA	3.06600151312258e-05	3.91449116344643e-05	olfactory receptor activity	MF
+GO:0007608	NA	NA	NA	NA	NA	NA	1.53750072233202e-07	0.000986581977025094	NA	NA	0.0310221286335219	0.00184652354867584	sensory perception of smell	BP

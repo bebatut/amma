@@ -87,17 +87,14 @@ Analysis | Report | Sources | Data & Results
 --- | --- | --- | ---
 Compare the microbiota (GF vs SPF) for the different ages and sexes | [<i class="far fa-file-image"></i>]({{ dp }}/3-analyze_microbiota_effect_given_ages_sexes.html) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/{{ dp }}/3-analyze_microbiota_effect_given_ages_sexes.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/{{ dp }}/3-analyze_microbiota_effect_given_ages_sexes)
 Compare the sexes (Male vs Female) for the different ages and microbiota | [<i class="far fa-file-image"></i>]({{ dp }}/4-analyze_sex_effect_given_ages_microbiota.html) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/{{ dp }}/4-analyze_sex_effect_given_ages_microbiota.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/{{ dp }}/4-analyze_sex_effect_given_ages_microbiota)
-Compare the ages (Middle-aged vs Young, Old vs Young and Old vs Middle-aged) for the different microbiota and sexes | [<i class="far fa-file-image"></i>]({{ dp }}/6-analyze_age_effect_given_microbiota_sexes.html) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/{{ dp }}/6-analyze_age_effect_given_microbiota_sexes.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/{{ dp }}/6-analyze_age_effect_given_microbiota_sexes)
+Compare the ages (Middle-aged vs Young, Old vs Young and Old vs Middle-aged) for the different microbiota and sexes | [<i class="far fa-file-image"></i>]({{ dp }}/5-analyze_age_effect_given_microbiota_sexes.html) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/{{ dp }}/5-analyze_age_effect_given_microbiota_sexes.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/{{ dp }}/5-analyze_age_effect_given_microbiota_sexes)
 
 #### Extra analyses
 
 Analysis | Report | Sources | Data & Results
 --- | --- | --- | ---
-Study of CML effect | [<i class="far fa-file-image"></i>]({{ dp }}/7-analyze_cml_effect.html) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/{{ dp }}/7-analyze_cml_effect.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/{{ dp }}/7-analyze_cml_effect)
-Postvisualize | [<i class="far fa-file-image"></i>]({{ dp }}/8-postvisualize.html) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/{{ dp }}/8-postvisualize.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/{{ dp }}/8-postvisualize)
-
-
-### Results
+Study of CML effect | [<i class="far fa-file-image"></i>]({{ dp }}/6-analyze_cml_effect.html) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/{{ dp }}/6-analyze_cml_effect.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/{{ dp }}/6-analyze_cml_effect)
+Postvisualize | [<i class="far fa-file-image"></i>]({{ dp }}/7-postvisualize.html) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/{{ dp }}/7-postvisualize.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/{{ dp }}/7-postvisualize)
 
 ## Microbiota analysis
 

@@ -71,8 +71,7 @@ Once it is finished:
 
 3. Open [http://localhost:8888/tree/](http://localhost:8888/tree/)
 2. Move to `src` in Jupyter
-4. Prepare the differential expression analyses
-    1. Open `prepare_data.ipynb` and execute all cells
+4. Prepare the data: Open `0-prepare_data.ipynb` and execute all cells
 
 ### Full analysis
 
@@ -81,46 +80,60 @@ Data: SPF/GF, young/middle-aged/old, female/male
 1. Move to `full-data`
 
 2. Prepare the differential expression analysis
-    1. Open `dge_analysis.ipynb` and execute all cells
-    2. Open `pre-visualization.ipynb` and execute all cells
+    1. Open `1-run_dge_analysis.ipynb` and execute all cells
+    2. Open `2-previsualize_data.ipynb` and execute all cells
 
-2. Analyze the differentially expressed genes given different comparisons
-    1.  Effect of the microbiota (GF vs SPF)
+2. Analyze the differentially expressed genes given different comparisons: Open the related notebook and execute all cells
+    
+    Analysis | Notebook
+    --- | ---
+    Effect of microbiota (GF vs SPF) for the different ages and sexes | `3-analyze_microbiota_effect_given_ages_sexes.ipynb`
+    Effect of sexes (Male vs Female) for the different ages and microbiota | `4-analyze_sex_effect_given_ages_microbiota.ipynb`
+    Effect of ages (Middle-aged vs Young, Old vs Young and Old vs Middle-aged) for the different microbiota and sexes | `6-analyze_age_effect_given_microbiota_sexes.ipynb`
 
-        Analysis | Notebook
-        --- | ---
-        Microbiota effect for both sexes, after controlling for age | `microbiota-effect-sex.ipynb`
-        Microbiota effect for the 3 ages, after controlling for sex | `microbiota-effect-age.ipynb`
-        Microbiota effect for the 3 ages and both sexes | `microbiota-effect-age-sex.ipynb`
+4. Run extra analyses
 
-    2. Effect of the sex (Male vs Female)
-
-        Analysis | Notebook
-        --- | ---
-        Sex effect for both microbiotas, after controlling for age | `sex-effect-microbiota.ipynb`
-        Sex effect for the 3 ages, after controlling for microbiota | `sex-effect-age.ipynb`
-        Sex effect for the 3 ages and both microbiotas | `sex-effect-microbiota-age.ipynb`
-
-    3. Effect of the ages (Middle-aged vs Young, Old vs Young and Old vs Middle-aged)
-
-        Analysis | Notebook
-        --- | ---
-        Age effect for both microbiotas, after controlling for sex | `age-effect-microbiota.ipynb`
-        Age effect for the both sexes, after controlling for microbiota | `age-effect-sex.ipynb`
-        Age effect for the both sexes and both microbiotas | `age-effect-microbiota-sex.ipynb`
+    Analysis | Noteobook
+    --- | ---
+    Study of CML effect | `7-analyze_cml_effect.ipynb`
+    Postvisualize | `8-postvisualize.ipynb`
 
 ## Sex-driven aging analysis
 
 Data: SPF, young/middle-aged/old, female/male
 
 1. Move to `sex-driven-aging`
+
 2. Prepare the differential expression analysis
-    1. Open `dge_analysis.ipynb` and execute all cells
-    2. Open `pre-visualization.ipynb` and execute all cells
+    1. Open `1-extract_samples` and execute all cells
+    1. Open `2-run_dge_analysis.ipynb` and execute all cells
+    2. Open `3-previsualize_data.ipynb` and execute all cells
+
+3. Analyze the differentially expressed genes given different comparisons: open the related notebook and execute all cells
+
+    Analysis | Notebook
+    --- | ---
+    Effect of the sex (Male vs Female) for the 3 ages | `4-analyze-sex-effect-given-ages.ipynb`
+    Effect of the ages (Young, Middle-aged, Old) for the sexes | `4-analyze-age-effect-given-sex.ipynb`
+
 
 ## Microbiota driven analysis
 
-Data: SPF/GF, young/odl, male
+Data: SPF/GF, young/old, male
+
+1. Move to `microbiota-driven`
+
+2. Prepare the differential expression analysis
+    1. Open `1-extract_samples` and execute all cells
+    1. Open `2-run_dge_analysis.ipynb` and execute all cells
+    2. Open `3-previsualize_data.ipynb` and execute all cells
+
+3. Analyze the differentially expressed genes given different comparisons: open the related notebook and execute all cells
+
+    Analysis | Notebook
+    --- | ---
+    Effect of the sex (Male vs Female) for the 3 ages | `4-analyze-sex-effect-given-ages.ipynb`
+    Effect of the ages (Young, Middle-aged, Old) for the sexes | `4-analyze-age-effect-given-sex.ipynb`
 
 
 # Website

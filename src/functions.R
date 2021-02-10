@@ -203,8 +203,8 @@ get_interesting_cat = function(l, cat_type, pvalue_threshold = 0.05){
 get_col_ramp_all_ont = function(mat, min_col, max_col){
     mat = mat %>%
         select(-c(category, term, ontology))
-    values = na.omit(unlist(mat))
-    if(length(values) > 0){
+    values = unique(na.omit(unlist(mat)))
+    if(length(values) > 1){
         cuts = cut(values,
             breaks=exp(log(10)*seq(log10(min(values)), log10(max(values)), len = 100)),
             include.lowest = TRUE)
@@ -212,7 +212,11 @@ get_col_ramp_all_ont = function(mat, min_col, max_col){
             rownames_to_column("comparison") %>%
             mutate(comparison = gsub(")[0-9]+", ")", comparison))
         return(df)
-    }else{
+    }else if (length(values) > 0){
+        df = data.frame(values=values, color=colorRampPalette(c(min_col, max_col))(99)[50]) %>%
+            rownames_to_column("comparison") %>%
+            mutate(comparison = gsub(")[0-9]+", ")", comparison))
+    }else {
         return(data.frame(values=numeric(), color=character(), comparison=character()))
     }
 }
@@ -248,7 +252,7 @@ extract_GO_terms = function(l, dir_path, go_term_to_exclude_fp){
     l$GO$cat = l$GO$terms %>% pull(category)
     # get colors
     l$GO$over_repr_colors = get_col_ramp_all_ont(l$GO$over, "red", "lightpink")
-    l$GO$under_repr_colors = get_col_ramp_all_ont(l$GO$under, "blue", "lightblue")
+    #l$GO$under_repr_colors = get_col_ramp_all_ont(l$GO$under, "blue", "lightblue")
     return(l)
 }
 
