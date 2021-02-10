@@ -43,7 +43,10 @@ launch-jupyter: ## launch Jupyter
 
 generate-reports: ## generate HTML reports from the Jupyter Notebooks
 	$(ACTIVATE_ENV) && \
-		jupyter nbconvert --to=html src/*.ipynb --output-dir docs/
+		jupyter nbconvert --to=html src/*.ipynb --output-dir docs/ && \
+		jupyter nbconvert --to=html src/full/*.ipynb --output-dir docs/full/ && \
+		jupyter nbconvert --to=html src/sex-driven-aging/*.ipynb --output-dir docs/sex-driven-aging/ && \
+		jupyter nbconvert --to=html src/microbiota-driven/*.ipynb --output-dir docs/microbiota-driven/
 .PHONY: generate-reports
 
 

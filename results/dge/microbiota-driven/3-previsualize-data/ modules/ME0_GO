@@ -1,0 +1,6 @@
+category	over_represented_pvalue	under_represented_pvalue	numDEInCat	numInCat	term	ontology
+GO:0016741	7.95652763417933e-08	0.999999970063532	55	168	transferase activity, transferring one-carbon groups	MF
+GO:0008168	6.28987015637546e-07	0.999999753537318	51	160	methyltransferase activity	MF
+GO:0008757	2.38093220866877e-06	0.999999126839745	41	123	S-adenosylmethionine-dependent methyltransferase activity	MF
+GO:0008173	7.82506727169655e-06	0.999997987044982	23	56	RNA methyltransferase activity	MF
+GO:0034470	1.27871868894427e-05	0.999993465916726	76	301	ncRNA processing	BP
