@@ -13218,7 +13218,7 @@ preparing IC data...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">dp</span> <span class="o">=</span> <span class="s">&quot;../../results/dge/microbiota-driven/&quot;</span>
@@ -13233,7 +13233,7 @@ preparing IC data...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">load</span><span class="p">(</span><span class="s">&quot;../../results/dge/gene_length.RData&quot;</span><span class="p">)</span>
@@ -13277,7 +13277,7 @@ preparing IC data...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">sub_contrasts</span> <span class="o">=</span> <span class="n">contrasts</span> <span class="o">%&gt;%</span>
@@ -13323,7 +13323,7 @@ preparing IC data...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">deg_results</span> <span class="o">=</span> <span class="nf">lapply</span><span class="p">(</span><span class="n">sub_contrasts</span><span class="o">$</span><span class="n">Info</span><span class="p">,</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">get_dge_results</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dge</span><span class="p">,</span> <span class="n">sub_contrasts</span><span class="p">))</span>
@@ -13345,7 +13345,7 @@ preparing IC data...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">deg</span> <span class="o">=</span> <span class="nf">extract_DEG_log2FC</span><span class="p">(</span><span class="n">deg_results</span><span class="p">,</span> <span class="n">dir_path</span><span class="p">)</span>
@@ -13355,10 +13355,32 @@ preparing IC data...
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Warning message:
+“`data_frame()` is deprecated as of tibble 1.1.0.
+Please use `tibble()` instead.
+<span class="ansi-black-intense-fg">This warning is displayed once every 8 hours.</span>
+<span class="ansi-black-intense-fg">Call `lifecycle::last_warnings()` to see where this warning was generated.</span>”
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">all_deg_genes</span> <span class="o">=</span> <span class="nf">unique</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">all_deg_genes</span><span class="p">,</span> <span class="n">deg</span><span class="o">$</span><span class="n">sign_fc_deg</span><span class="o">$</span><span class="n">genes</span><span class="p">))</span>
@@ -13379,7 +13401,7 @@ preparing IC data...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">deg</span> <span class="o">=</span> <span class="nf">extract_DEG_stats</span><span class="p">(</span><span class="n">deg</span><span class="p">,</span> <span class="n">dir_path</span><span class="p">)</span>
@@ -13400,7 +13422,21 @@ preparing IC data...
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>Using type as id variables
+<pre>Warning message:
+“`funs()` is deprecated as of dplyr 0.8.0.
+Please use a list of either functions or lambdas: 
+
+  # Simple named list: 
+  list(mean = mean, median = median)
+
+  # Auto named with `tibble::lst()`: 
+  tibble::lst(mean, median)
+
+  # Using lambdas
+  list(~ mean(., trim = .2), ~ median(., na.rm = TRUE))
+<span class="ansi-black-intense-fg">This warning is displayed once every 8 hours.</span>
+<span class="ansi-black-intense-fg">Call `lifecycle::last_warnings()` to see where this warning was generated.</span>”
+Using type as id variables
 
 </pre>
 </div>
@@ -15164,7 +15200,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">plot_sign_DEG_upset</span><span class="p">(</span><span class="n">deg</span><span class="p">)</span>
@@ -15811,7 +15847,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">pdf</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="s">&quot;sign_FC_DEG_upset.pdf&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">))</span>
@@ -16466,7 +16502,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">deg</span><span class="o">$</span><span class="n">sign_fc_deg</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="o">-</span><span class="n">genes</span><span class="p">)</span>
@@ -17338,7 +17374,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">comps</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
@@ -17401,7 +17437,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">plot_z_score_heatmap</span><span class="p">(</span><span class="n">z_scores</span><span class="p">,</span>
@@ -19818,7 +19854,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">comp</span> <span class="n">in</span> <span class="nf">names</span><span class="p">(</span><span class="n">comps</span><span class="p">)){</span>
@@ -24015,7 +24051,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">plot_z_score_heatmap</span><span class="p">(</span><span class="n">z_scores</span><span class="p">,</span>
@@ -26448,7 +26484,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">comp</span> <span class="n">in</span> <span class="nf">names</span><span class="p">(</span><span class="n">comps</span><span class="p">)){</span>
@@ -30656,7 +30692,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">comps</span> <span class="o">=</span> <span class="nf">names</span><span class="p">(</span><span class="n">comps</span><span class="p">)</span>
@@ -30676,7 +30712,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">plot_z_score_heatmap_with_modules</span><span class="p">(</span><span class="n">z_scores</span><span class="p">,</span>
@@ -33154,7 +33190,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">comp</span> <span class="n">in</span> <span class="n">comps</span><span class="p">){</span>
@@ -37679,7 +37715,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">plot_z_score_heatmap_with_modules</span><span class="p">(</span><span class="n">z_scores</span><span class="p">,</span>
@@ -40153,7 +40189,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">comp</span> <span class="n">in</span> <span class="n">comps</span><span class="p">){</span>
@@ -44705,7 +44741,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">comp</span> <span class="n">in</span> <span class="n">comps</span><span class="p">){</span>
@@ -52802,7 +52838,7 @@ height=690
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">deg</span> <span class="o">=</span> <span class="nf">fit_proba_weighting_function</span><span class="p">(</span><span class="n">deg</span><span class="p">,</span> <span class="n">gene_length</span><span class="p">)</span>
@@ -52843,7 +52879,7 @@ Warning message in pcls(G):
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">deg</span> <span class="o">=</span> <span class="nf">extract_GO_terms</span><span class="p">(</span><span class="n">deg</span><span class="p">,</span> <span class="n">dir_path</span><span class="p">,</span> <span class="s">&quot;../../data/go_term_to_exclude.csv&quot;</span><span class="p">)</span>
@@ -52890,7 +52926,7 @@ Warning message in pcls(G):
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">plot_top_go</span><span class="p">(</span><span class="n">deg</span><span class="p">,</span> <span class="s">&quot;BP&quot;</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
@@ -54430,7 +54466,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">plot_top_go</span><span class="p">(</span><span class="n">deg</span><span class="p">,</span> <span class="s">&quot;CC&quot;</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
@@ -55807,7 +55843,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">plot_top_go</span><span class="p">(</span><span class="n">deg</span><span class="p">,</span> <span class="s">&quot;MF&quot;</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
@@ -57053,7 +57089,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">deg</span> <span class="o">=</span> <span class="nf">extract_KEGG_pathways</span><span class="p">(</span><span class="n">deg</span><span class="p">,</span> <span class="n">dir_path</span><span class="p">)</span>
@@ -57085,7 +57121,7 @@ height=420
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">plot_kegg_pathways</span><span class="p">(</span><span class="n">deg</span><span class="o">$</span><span class="n">KEGG</span><span class="o">$</span><span class="n">over</span><span class="o">$</span><span class="n">category</span><span class="p">,</span>
@@ -57495,7 +57531,7 @@ Warning message in file.rename(from = paste(&#34;mmu&#34;, cat, &#34;.pathview.m
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">plot_kegg_pathways</span><span class="p">(</span><span class="n">deg</span><span class="o">$</span><span class="n">under_represented_KEGG</span><span class="p">[,</span><span class="s">&quot;category&quot;</span><span class="p">],</span>
@@ -57525,7 +57561,7 @@ Warning message in file.rename(from = paste(&#34;mmu&#34;, cat, &#34;.pathview.m
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">citation</span><span class="p">(</span><span class="s">&quot;pheatmap&quot;</span><span class="p">)</span>
@@ -57577,7 +57613,7 @@ package DESCRIPTION file and may need manual editing, see
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">citation</span><span class="p">(</span><span class="s">&quot;pathview&quot;</span><span class="p">)</span>

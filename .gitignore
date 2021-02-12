@@ -7,5 +7,8 @@ __pycache__
 src/.ipynb_checkpoints
 src/*.png
 src/*.xml
+src/*/.ipynb_checkpoints
+src/*/*.png
+src/*/*.xml
 *.RData
 _site

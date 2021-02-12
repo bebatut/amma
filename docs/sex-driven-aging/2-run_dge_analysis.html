@@ -13207,6 +13207,7 @@ preparing IC data...
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">dp</span> <span class="o">=</span> <span class="s">&quot;../../results/dge/sex-driven-aging/&quot;</span>
+<span class="nf">dir.create</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="n">showWarnings</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -19267,10 +19268,10 @@ fitting model and testing
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">contrasts</span> <span class="o">=</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="nf">matrix</span><span class="p">(</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">man_contrasts</span> <span class="o">=</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="nf">matrix</span><span class="p">(</span>
         <span class="n">nrow</span><span class="o">=</span><span class="m">0</span><span class="p">,</span>
         <span class="n">ncol</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">contrast_names</span><span class="p">)</span><span class="m">+1</span><span class="p">))</span> <span class="o">%&gt;%</span>
     <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Male vs Female (Young)&quot;</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="p">)))</span> <span class="o">%&gt;%</span>
@@ -19287,8 +19288,8 @@ fitting model and testing
     <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Old vs Middle-aged (Female)&quot;</span><span class="p">,</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="m">-1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="p">)))</span> <span class="o">%&gt;%</span>
     <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Old vs Middle-aged (Male)&quot;</span><span class="p">,</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="m">-1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">-1</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span> <span class="o">%&gt;%</span>
     <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Old vs Middle-aged&quot;</span><span class="p">,</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="m">-1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">-1</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="p">))</span>
-<span class="n">contrasts</span>
-<span class="nf">save</span><span class="p">(</span><span class="n">contrasts</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="s">&quot;contrasts.RData&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">))</span>
+<span class="n">man_contrasts</span>
+<span class="c1">#save(contrasts, file=paste(dp, &quot;contrasts.RData&quot;, sep=&#39;&#39;))</span>
 </pre></div>
 
     </div>
@@ -19326,6 +19327,214 @@ fitting model and testing
 	<tr><td>Old vs Middle-aged (Female)  </td><td>0</td><td>0</td><td>-1</td><td>1</td><td>0                </td><td>0                </td></tr>
 	<tr><td>Old vs Middle-aged (Male)    </td><td>0</td><td>0</td><td>-1</td><td>1</td><td>-1               </td><td>1                </td></tr>
 	<tr><td>Old vs Middle-aged           </td><td>0</td><td>0</td><td>-1</td><td>1</td><td>-0.5             </td><td>0.5              </td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">mod_mat</span> <span class="o">=</span> <span class="nf">model.matrix</span><span class="p">(</span><span class="nf">design</span><span class="p">(</span><span class="n">dds</span><span class="p">),</span> <span class="nf">colData</span><span class="p">(</span><span class="n">dds</span><span class="p">))</span>
+<span class="n">coeff_vectors</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+    <span class="s">&quot;Male / Young&quot;</span> <span class="o">=</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">mod_mat</span><span class="p">[</span><span class="n">dds</span><span class="o">$</span><span class="n">Sex</span> <span class="o">==</span> <span class="s">&quot;Male&quot;</span> <span class="o">&amp;</span> <span class="n">dds</span><span class="o">$</span><span class="n">Age</span> <span class="o">==</span> <span class="s">&quot;Young&quot;</span><span class="p">,</span> <span class="p">]),</span>
+    <span class="s">&quot;Female / Young&quot;</span> <span class="o">=</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">mod_mat</span><span class="p">[</span><span class="n">dds</span><span class="o">$</span><span class="n">Sex</span> <span class="o">==</span> <span class="s">&quot;Female&quot;</span> <span class="o">&amp;</span> <span class="n">dds</span><span class="o">$</span><span class="n">Age</span> <span class="o">==</span> <span class="s">&quot;Young&quot;</span><span class="p">,</span> <span class="p">]),</span>
+    <span class="s">&quot;Male / Middle-aged&quot;</span> <span class="o">=</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">mod_mat</span><span class="p">[</span><span class="n">dds</span><span class="o">$</span><span class="n">Sex</span> <span class="o">==</span> <span class="s">&quot;Male&quot;</span> <span class="o">&amp;</span> <span class="n">dds</span><span class="o">$</span><span class="n">Age</span> <span class="o">==</span> <span class="s">&quot;Middle-aged&quot;</span><span class="p">,</span> <span class="p">]),</span>
+    <span class="s">&quot;Female / Middle-aged&quot;</span> <span class="o">=</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">mod_mat</span><span class="p">[</span><span class="n">dds</span><span class="o">$</span><span class="n">Sex</span> <span class="o">==</span> <span class="s">&quot;Female&quot;</span> <span class="o">&amp;</span> <span class="n">dds</span><span class="o">$</span><span class="n">Age</span> <span class="o">==</span> <span class="s">&quot;Middle-aged&quot;</span><span class="p">,</span> <span class="p">]),</span>
+    <span class="s">&quot;Male / Old&quot;</span> <span class="o">=</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">mod_mat</span><span class="p">[</span><span class="n">dds</span><span class="o">$</span><span class="n">Sex</span> <span class="o">==</span> <span class="s">&quot;Male&quot;</span> <span class="o">&amp;</span> <span class="n">dds</span><span class="o">$</span><span class="n">Age</span> <span class="o">==</span> <span class="s">&quot;Old&quot;</span><span class="p">,</span> <span class="p">]),</span>
+    <span class="s">&quot;Female / Old&quot;</span> <span class="o">=</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">mod_mat</span><span class="p">[</span><span class="n">dds</span><span class="o">$</span><span class="n">Sex</span> <span class="o">==</span> <span class="s">&quot;Female&quot;</span> <span class="o">&amp;</span> <span class="n">dds</span><span class="o">$</span><span class="n">Age</span> <span class="o">==</span> <span class="s">&quot;Old&quot;</span><span class="p">,</span> <span class="p">]),</span>
+    <span class="s">&quot;Male&quot;</span> <span class="o">=</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">mod_mat</span><span class="p">[</span><span class="n">dds</span><span class="o">$</span><span class="n">Sex</span> <span class="o">==</span> <span class="s">&quot;Male&quot;</span><span class="p">,</span> <span class="p">]),</span>
+    <span class="s">&quot;Female&quot;</span> <span class="o">=</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">mod_mat</span><span class="p">[</span><span class="n">dds</span><span class="o">$</span><span class="n">Sex</span> <span class="o">==</span> <span class="s">&quot;Female&quot;</span><span class="p">,</span> <span class="p">]),</span>
+    <span class="s">&quot;Young&quot;</span> <span class="o">=</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">mod_mat</span><span class="p">[</span><span class="n">dds</span><span class="o">$</span><span class="n">Age</span> <span class="o">==</span> <span class="s">&quot;Young&quot;</span><span class="p">,</span> <span class="p">]),</span>
+    <span class="s">&quot;Middle-aged&quot;</span> <span class="o">=</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">mod_mat</span><span class="p">[</span><span class="n">dds</span><span class="o">$</span><span class="n">Age</span> <span class="o">==</span> <span class="s">&quot;Middle-aged&quot;</span><span class="p">,</span> <span class="p">]),</span>
+    <span class="s">&quot;Old&quot;</span> <span class="o">=</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">mod_mat</span><span class="p">[</span><span class="n">dds</span><span class="o">$</span><span class="n">Age</span> <span class="o">==</span> <span class="s">&quot;Old&quot;</span><span class="p">,</span> <span class="p">])</span>
+<span class="p">)</span>
+<span class="n">coeff_vectors</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<dl>
+	<dt>$`Male / Young`</dt>
+		<dd><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>(Intercept)</dt><dd>1</dd><dt>SexMale</dt><dd>1</dd><dt>AgeMiddle-aged</dt><dd>0</dd><dt>AgeOld</dt><dd>0</dd><dt>SexMale:AgeMiddle-aged</dt><dd>0</dd><dt>SexMale:AgeOld</dt><dd>0</dd></dl>
+</dd>
+	<dt>$`Female / Young`</dt>
+		<dd><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>(Intercept)</dt><dd>1</dd><dt>SexMale</dt><dd>0</dd><dt>AgeMiddle-aged</dt><dd>0</dd><dt>AgeOld</dt><dd>0</dd><dt>SexMale:AgeMiddle-aged</dt><dd>0</dd><dt>SexMale:AgeOld</dt><dd>0</dd></dl>
+</dd>
+	<dt>$`Male / Middle-aged`</dt>
+		<dd><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>(Intercept)</dt><dd>1</dd><dt>SexMale</dt><dd>1</dd><dt>AgeMiddle-aged</dt><dd>1</dd><dt>AgeOld</dt><dd>0</dd><dt>SexMale:AgeMiddle-aged</dt><dd>1</dd><dt>SexMale:AgeOld</dt><dd>0</dd></dl>
+</dd>
+	<dt>$`Female / Middle-aged`</dt>
+		<dd><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>(Intercept)</dt><dd>1</dd><dt>SexMale</dt><dd>0</dd><dt>AgeMiddle-aged</dt><dd>1</dd><dt>AgeOld</dt><dd>0</dd><dt>SexMale:AgeMiddle-aged</dt><dd>0</dd><dt>SexMale:AgeOld</dt><dd>0</dd></dl>
+</dd>
+	<dt>$`Male / Old`</dt>
+		<dd><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>(Intercept)</dt><dd>1</dd><dt>SexMale</dt><dd>1</dd><dt>AgeMiddle-aged</dt><dd>0</dd><dt>AgeOld</dt><dd>1</dd><dt>SexMale:AgeMiddle-aged</dt><dd>0</dd><dt>SexMale:AgeOld</dt><dd>1</dd></dl>
+</dd>
+	<dt>$`Female / Old`</dt>
+		<dd><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>(Intercept)</dt><dd>1</dd><dt>SexMale</dt><dd>0</dd><dt>AgeMiddle-aged</dt><dd>0</dd><dt>AgeOld</dt><dd>1</dd><dt>SexMale:AgeMiddle-aged</dt><dd>0</dd><dt>SexMale:AgeOld</dt><dd>0</dd></dl>
+</dd>
+	<dt>$Male</dt>
+		<dd><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>(Intercept)</dt><dd>1</dd><dt>SexMale</dt><dd>1</dd><dt>AgeMiddle-aged</dt><dd>0.227272727272727</dd><dt>AgeOld</dt><dd>0.636363636363636</dd><dt>SexMale:AgeMiddle-aged</dt><dd>0.227272727272727</dd><dt>SexMale:AgeOld</dt><dd>0.636363636363636</dd></dl>
+</dd>
+	<dt>$Female</dt>
+		<dd><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>(Intercept)</dt><dd>1</dd><dt>SexMale</dt><dd>0</dd><dt>AgeMiddle-aged</dt><dd>0.5</dd><dt>AgeOld</dt><dd>0.25</dd><dt>SexMale:AgeMiddle-aged</dt><dd>0</dd><dt>SexMale:AgeOld</dt><dd>0</dd></dl>
+</dd>
+	<dt>$Young</dt>
+		<dd><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>(Intercept)</dt><dd>1</dd><dt>SexMale</dt><dd>0.5</dd><dt>AgeMiddle-aged</dt><dd>0</dd><dt>AgeOld</dt><dd>0</dd><dt>SexMale:AgeMiddle-aged</dt><dd>0</dd><dt>SexMale:AgeOld</dt><dd>0</dd></dl>
+</dd>
+	<dt>$`Middle-aged`</dt>
+		<dd><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>(Intercept)</dt><dd>1</dd><dt>SexMale</dt><dd>0.454545454545455</dd><dt>AgeMiddle-aged</dt><dd>1</dd><dt>AgeOld</dt><dd>0</dd><dt>SexMale:AgeMiddle-aged</dt><dd>0.454545454545455</dd><dt>SexMale:AgeOld</dt><dd>0</dd></dl>
+</dd>
+	<dt>$Old</dt>
+		<dd><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>(Intercept)</dt><dd>1</dd><dt>SexMale</dt><dd>0.823529411764706</dd><dt>AgeMiddle-aged</dt><dd>0</dd><dt>AgeOld</dt><dd>1</dd><dt>SexMale:AgeMiddle-aged</dt><dd>0</dd><dt>SexMale:AgeOld</dt><dd>0.823529411764706</dd></dl>
+</dd>
+</dl>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">contrasts</span> <span class="o">=</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="nf">matrix</span><span class="p">(</span>
+        <span class="n">nrow</span><span class="o">=</span><span class="m">0</span><span class="p">,</span>
+        <span class="n">ncol</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">contrast_names</span><span class="p">)</span><span class="m">+1</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Male vs Female (Young)&quot;</span><span class="p">,</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Male / Young&quot;</span><span class="p">]]</span> <span class="o">-</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Female / Young&quot;</span><span class="p">]]))</span> <span class="o">%&gt;%</span>
+    <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Male vs Female (Middle-aged)&quot;</span><span class="p">,</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Male / Middle-aged&quot;</span><span class="p">]]</span> <span class="o">-</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Female / Middle-aged&quot;</span><span class="p">]]))</span> <span class="o">%&gt;%</span>
+    <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Male vs Female (Old)&quot;</span><span class="p">,</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Male / Old&quot;</span><span class="p">]]</span> <span class="o">-</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Female / Old&quot;</span><span class="p">]]))</span> <span class="o">%&gt;%</span>
+    <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Male vs Female&quot;</span><span class="p">,</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Male&quot;</span><span class="p">]]</span> <span class="o">-</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Female&quot;</span><span class="p">]]))</span> <span class="o">%&gt;%</span>
+    <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Middle-aged vs Young (Female)&quot;</span><span class="p">,</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Female / Middle-aged&quot;</span><span class="p">]]</span> <span class="o">-</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Female / Young&quot;</span><span class="p">]]))</span> <span class="o">%&gt;%</span>
+    <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Middle-aged vs Young (Male)&quot;</span><span class="p">,</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Male / Middle-aged&quot;</span><span class="p">]]</span> <span class="o">-</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Male / Young&quot;</span><span class="p">]]))</span> <span class="o">%&gt;%</span>
+    <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Middle-aged vs Young&quot;</span><span class="p">,</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Middle-aged&quot;</span><span class="p">]]</span> <span class="o">-</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Young&quot;</span><span class="p">]]))</span> <span class="o">%&gt;%</span>
+    <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Old vs Young (Female)&quot;</span><span class="p">,</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Female / Old&quot;</span><span class="p">]]</span> <span class="o">-</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Female / Young&quot;</span><span class="p">]]))</span> <span class="o">%&gt;%</span>
+    <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Old vs Young (Male)&quot;</span><span class="p">,</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Male / Old&quot;</span><span class="p">]]</span> <span class="o">-</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Male / Young&quot;</span><span class="p">]]))</span> <span class="o">%&gt;%</span>
+    <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Old vs Young&quot;</span><span class="p">,</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Old&quot;</span><span class="p">]]</span> <span class="o">-</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Young&quot;</span><span class="p">]]))</span> <span class="o">%&gt;%</span>
+    <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Old vs Middle-aged (Female)&quot;</span><span class="p">,</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Female / Old&quot;</span><span class="p">]]</span> <span class="o">-</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Female / Middle-aged&quot;</span><span class="p">]]))</span> <span class="o">%&gt;%</span>
+    <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Old vs Middle-aged (Male)&quot;</span><span class="p">,</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Male / Old&quot;</span><span class="p">]]</span> <span class="o">-</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Male / Middle-aged&quot;</span><span class="p">]]))</span> <span class="o">%&gt;%</span>
+    <span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Old vs Middle-aged&quot;</span><span class="p">,</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Old&quot;</span><span class="p">]]</span> <span class="o">-</span> <span class="n">coeff_vectors</span><span class="p">[[</span><span class="s">&quot;Middle-aged&quot;</span><span class="p">]]))</span> <span class="o">%&gt;%</span>
+    <span class="nf">rename_all</span><span class="p">(</span><span class="nf">funs</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Info&quot;</span><span class="p">,</span> <span class="n">contrast_names</span><span class="p">)))</span>
+<span class="n">contrasts</span>
+<span class="nf">save</span><span class="p">(</span><span class="n">contrasts</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="s">&quot;contrasts.RData&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<table>
+<caption>A data.frame: 13 × 7</caption>
+<thead>
+	<tr><th scope=col>Info</th><th scope=col>Intercept</th><th scope=col>Male vs Female</th><th scope=col>Middle-aged vs Young</th><th scope=col>Old vs Young</th><th scope=col>Male &amp; Middle-aged</th><th scope=col>Male &amp; Old</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>Male vs Female (Young)       </td><td>0</td><td>1                  </td><td>0                 </td><td>0                </td><td>0                 </td><td>0                </td></tr>
+	<tr><td>Male vs Female (Middle-aged) </td><td>0</td><td>1                  </td><td>0                 </td><td>0                </td><td>1                 </td><td>0                </td></tr>
+	<tr><td>Male vs Female (Old)         </td><td>0</td><td>1                  </td><td>0                 </td><td>0                </td><td>0                 </td><td>1                </td></tr>
+	<tr><td>Male vs Female               </td><td>0</td><td>1                  </td><td>-0.272727272727273</td><td>0.386363636363636</td><td>0.227272727272727 </td><td>0.636363636363636</td></tr>
+	<tr><td>Middle-aged vs Young (Female)</td><td>0</td><td>0                  </td><td>1                 </td><td>0                </td><td>0                 </td><td>0                </td></tr>
+	<tr><td>Middle-aged vs Young (Male)  </td><td>0</td><td>0                  </td><td>1                 </td><td>0                </td><td>1                 </td><td>0                </td></tr>
+	<tr><td>Middle-aged vs Young         </td><td>0</td><td>-0.0454545454545455</td><td>1                 </td><td>0                </td><td>0.454545454545455 </td><td>0                </td></tr>
+	<tr><td>Old vs Young (Female)        </td><td>0</td><td>0                  </td><td>0                 </td><td>1                </td><td>0                 </td><td>0                </td></tr>
+	<tr><td>Old vs Young (Male)          </td><td>0</td><td>0                  </td><td>0                 </td><td>1                </td><td>0                 </td><td>1                </td></tr>
+	<tr><td>Old vs Young                 </td><td>0</td><td>0.323529411764706  </td><td>0                 </td><td>1                </td><td>0                 </td><td>0.823529411764706</td></tr>
+	<tr><td>Old vs Middle-aged (Female)  </td><td>0</td><td>0                  </td><td>-1                </td><td>1                </td><td>0                 </td><td>0                </td></tr>
+	<tr><td>Old vs Middle-aged (Male)    </td><td>0</td><td>0                  </td><td>-1                </td><td>1                </td><td>-1                </td><td>1                </td></tr>
+	<tr><td>Old vs Middle-aged           </td><td>0</td><td>0.368983957219251  </td><td>-1                </td><td>1                </td><td>-0.454545454545455</td><td>0.823529411764706</td></tr>
 </tbody>
 </table>
 
