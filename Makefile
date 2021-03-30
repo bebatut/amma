@@ -1,3 +1,4 @@
+SHELL=bash
 CONDA_ENV = amma-3
 
 CONDA = $(shell which conda)
@@ -22,7 +23,7 @@ create-env: ## create conda environment
 	fi
 .PHONY: create-env
 
-ACTIVATE_ENV = source $(dir ${CONDA})activate ${CONDA_ENV}
+ACTIVATE_ENV = source $(shell dirname $(dir $(CONDA)))/bin/activate ${CONDA_ENV}
 install: clean ## install dependencies for website
 	$(ACTIVATE_ENV) && \
 		cd docs && \
