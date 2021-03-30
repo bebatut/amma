@@ -1,2 +1,2 @@
 category	over_represented_pvalue	under_represented_pvalue	numDEInCat	numInCat	term	ontology
-GO:0007049	3.29460720707942e-08	1	190	1051	cell cycle	BP
+GO:0007049	4.48853691895996e-08	1	192	1067	cell cycle	BP

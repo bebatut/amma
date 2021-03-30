@@ -76,9 +76,11 @@ Analysis | Report | Sources | Data & Results
 Comparison between the microbiota (GF vs SPF) for the ages | [<i class="far fa-file-image"></i>]({{ page.dp }}/4-analyze_microbiota_effect_given_ages.html) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/{{ page.dp }}/4-analyze_microbiota_effect_given_ages.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/{{ page.dp }}/4-analyze_microbiota_effect_given_ages)
 Comparison between the ages (Old vs Young) for the microbiota | [<i class="far fa-file-image"></i>]({{ page.dp }}/5-analyze_age_effect_given_microbiota.html) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/{{ page.dp }}/5-analyze_age_effect_given_microbiota.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/{{ page.dp }}/5-analyze_age_effect_given_microbiota)
 
-## Results
+### Extra analyses
 
-
+Analysis | Report | Sources | Data & Results
+--- | --- | --- | ---
+Study of CML effect | [<i class="far fa-file-image"></i>]({{ page.dp }}/6-analyze_cml_effect.html) | [<i class="fab fa-github"></i>]({{ site.github.repository_url }}/tree/master/src/{{ page.dp }}/6-analyze_cml_effect.ipynb) | [<i class="fas fa-file"></i>]({{ site.github.repository_url }}/tree/master/results/dge/{{ page.dp }}/6-analyze_cml_effect)
 
 ## References
 

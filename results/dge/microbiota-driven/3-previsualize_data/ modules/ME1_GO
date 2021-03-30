@@ -1,12 +1,13 @@
 category	over_represented_pvalue	under_represented_pvalue	numDEInCat	numInCat	term	ontology
-GO:0031984	4.58704185366626e-08	1	167	642	organelle subcompartment	CC
-GO:0005783	1.0206679135639e-07	1	249	1048	endoplasmic reticulum	CC
-GO:0004842	1.21296136211254e-07	1	91	296	ubiquitin-protein transferase activity	MF
-GO:0019787	1.21495690600985e-07	1	95	313	ubiquitin-like protein transferase activity	MF
-GO:0016021	2.42364994474133e-07	1	442	2007	integral component of membrane	CC
-GO:0031224	2.74034647016866e-07	1	450	2051	intrinsic component of membrane	CC
-GO:0042175	5.50826613637743e-07	1	104	376	nuclear outer membrane-endoplasmic reticulum membrane network	CC
-GO:0098827	1.13338805079387e-06	0.999999596893116	103	373	endoplasmic reticulum subcompartment	CC
-GO:0005789	3.28340091214457e-06	0.999998474340069	99	362	endoplasmic reticulum membrane	CC
-GO:0044432	7.4149316508872e-06	0.999995847930524	115	442	endoplasmic reticulum part	CC
-GO:0070647	9.1174709632086e-06	0.999994588862495	149	588	protein modification by small protein conjugation or removal	BP
+GO:0031984	2.68035527755009e-08	1	172	660	organelle subcompartment	CC
+GO:0005783	3.89686086306935e-08	1	256	1070	endoplasmic reticulum	CC
+GO:0004842	9.50347308392911e-08	1	92	299	ubiquitin-protein transferase activity	MF
+GO:0019787	9.5683346967981e-08	1	96	316	ubiquitin-like protein transferase activity	MF
+GO:0016021	2.71751024486015e-07	1	449	2043	integral component of membrane	CC
+GO:0042175	3.04713708299218e-07	1	107	385	nuclear outer membrane-endoplasmic reticulum membrane network	CC
+GO:0098827	4.53874436500945e-07	1	106	383	endoplasmic reticulum subcompartment	CC
+GO:0031224	5.36458913647087e-07	0.999999771085356	457	2087	intrinsic component of membrane	CC
+GO:0005789	1.52198799736119e-06	0.999999456649156	102	371	endoplasmic reticulum membrane	CC
+GO:0044432	1.66107922144773e-06	0.999999386457241	120	455	endoplasmic reticulum part	CC
+GO:0012505	1.04156917803669e-05	0.999992237572064	498	2360	endomembrane system	CC
+GO:0070647	1.25795523059704e-05	0.999992270558461	151	600	protein modification by small protein conjugation or removal	BP
