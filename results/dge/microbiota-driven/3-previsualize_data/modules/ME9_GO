@@ -1,0 +1,5 @@
+category	over_represented_pvalue	under_represented_pvalue	numDEInCat	numInCat	term	ontology
+GO:0000313	2.09631191432879e-06	0.999999670582484	13	86	organellar ribosome	CC
+GO:0005761	2.09631191432879e-06	0.999999670582484	13	86	mitochondrial ribosome	CC
+GO:0005759	3.21396835833334e-06	0.999999156276472	21	232	mitochondrial matrix	CC
+GO:0140053	7.4705415312459e-06	0.999998770578602	12	94	mitochondrial gene expression	BP

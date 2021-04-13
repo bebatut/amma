@@ -1,0 +1,39 @@
+category	over_represented_pvalue	under_represented_pvalue	numDEInCat	numInCat	term	ontology
+GO:0051983	3.00438389068817e-06	0.999999015827876	35	89	regulation of chromosome segregation	BP
+GO:0031577	3.32909069088694e-06	0.999999382703158	19	36	spindle checkpoint	BP
+GO:0007059	4.39941716957509e-06	0.999998097051854	74	247	chromosome segregation	BP
+GO:0071174	4.98859259219233e-06	0.999999093998347	18	34	mitotic spindle checkpoint	BP
+GO:0000779	5.70060975195397e-06	0.999998748667613	21	43	condensed chromosome, centromeric region	CC
+GO:0007091	6.38328058173549e-06	0.99999844093574	23	50	metaphase/anaphase transition of mitotic cell cycle	BP
+GO:1901991	6.85963219818746e-06	0.999997362280811	42	116	negative regulation of mitotic cell cycle phase transition	BP
+GO:0010965	9.10222812539928e-06	0.99999770475207	23	51	regulation of mitotic sister chromatid separation	BP
+GO:0044784	1.00806727578909e-05	0.999997439968614	23	51	metaphase/anaphase transition of cell cycle	BP
+GO:0000819	1.18372718686014e-05	0.999994852792516	50	151	sister chromatid segregation	BP
+GO:1905818	1.27482888416931e-05	0.9999965650808	24	55	regulation of chromosome separation	BP
+GO:0045841	1.52774936241455e-05	0.999996864208177	18	36	negative regulation of mitotic metaphase/anaphase transition	BP
+GO:0016741	1.72322217856287e-05	0.999992034257297	55	172	transferase activity, transferring one-carbon groups	MF
+GO:0051304	1.79567135803741e-05	0.999994058481624	30	78	chromosome separation	BP
+GO:0007093	2.05509098003646e-05	0.999991929331134	39	111	mitotic cell cycle checkpoint	BP
+GO:0033045	2.23469420224362e-05	0.999992889019728	28	70	regulation of sister chromatid segregation	BP
+GO:0009451	2.31429877631598e-05	0.999990364828681	43	126	RNA modification	BP
+GO:2000816	2.31835479029593e-05	0.999995007952154	18	37	negative regulation of mitotic sister chromatid separation	BP
+GO:1902100	2.60273830181783e-05	0.999994340725593	18	37	negative regulation of metaphase/anaphase transition of cell cycle	BP
+GO:0000777	2.6220309001542e-05	0.999995011377493	16	31	condensed chromosome kinetochore	CC
+GO:0051306	2.73485514881522e-05	0.999992402439522	23	54	mitotic sister chromatid separation	BP
+GO:0030071	2.77951231577393e-05	0.99999288309308	21	47	regulation of mitotic metaphase/anaphase transition	BP
+GO:1901988	3.35931286129078e-05	0.999985761734746	43	126	negative regulation of cell cycle phase transition	BP
+GO:0008168	3.40542370699506e-05	0.999984163355637	52	163	methyltransferase activity	MF
+GO:0008173	3.57347261237628e-05	0.999989543272289	24	57	RNA methyltransferase activity	MF
+GO:1905819	3.85707205691271e-05	0.999991226006669	18	38	negative regulation of chromosome separation	BP
+GO:0007094	3.92641807032698e-05	0.999992117057455	16	32	mitotic spindle assembly checkpoint	BP
+GO:0071173	3.92641807032698e-05	0.999992117057455	16	32	spindle assembly checkpoint	BP
+GO:1902099	4.27964152669556e-05	0.999988590145243	21	48	regulation of metaphase/anaphase transition of cell cycle	BP
+GO:0000070	4.94936456332938e-05	0.999978516161675	43	130	mitotic sister chromatid segregation	BP
+GO:0008175	4.98288552286713e-05	0.999989938310429	16	31	tRNA methyltransferase activity	MF
+GO:0000940	5.60652577855568e-05	0.999995379262227	9	13	condensed chromosome outer kinetochore	CC
+GO:0090329	7.08857988707387e-05	0.999981796466303	19	43	regulation of DNA-dependent DNA replication	BP
+GO:0033048	7.61444771500125e-05	0.999981253329606	18	40	negative regulation of mitotic sister chromatid segregation	BP
+GO:0000075	7.76792791399393e-05	0.99996333182561	49	156	cell cycle checkpoint	BP
+GO:0051985	7.86540160973401e-05	0.999979624694698	19	43	negative regulation of chromosome segregation	BP
+GO:0014831	7.99570790664199e-05	1	6	6	gastro-intestinal system smooth muscle contraction	BP
+GO:0033047	9.46262372705309e-05	0.999969753085404	24	61	regulation of mitotic sister chromatid segregation	BP

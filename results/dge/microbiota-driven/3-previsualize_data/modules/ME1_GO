@@ -1,0 +1,14 @@
+category	over_represented_pvalue	under_represented_pvalue	numDEInCat	numInCat	term	ontology
+GO:0031984	8.05277643791479e-10	1	189	680	organelle subcompartment	CC
+GO:0042175	1.13903908062654e-08	1	118	395	nuclear outer membrane-endoplasmic reticulum membrane network	CC
+GO:0004842	1.42307934514795e-08	1	101	313	ubiquitin-protein transferase activity	MF
+GO:0019787	1.64407470509327e-08	1	105	330	ubiquitin-like protein transferase activity	MF
+GO:0005783	1.66617270218035e-08	1	277	1114	endoplasmic reticulum	CC
+GO:0012505	3.09543782448861e-08	1	559	2481	endomembrane system	CC
+GO:0031224	3.16058761063872e-08	1	525	2288	intrinsic component of membrane	CC
+GO:0098827	3.31451351821311e-08	1	116	393	endoplasmic reticulum subcompartment	CC
+GO:0016021	3.40263540820905e-08	1	514	2234	integral component of membrane	CC
+GO:0005789	3.58898097021496e-08	1	113	381	endoplasmic reticulum membrane	CC
+GO:0044432	1.89763134834499e-07	1	131	471	endoplasmic reticulum part	CC
+GO:0061659	2.57753153290554e-06	0.999998947788904	66	200	ubiquitin-like protein ligase activity	MF
+GO:0061630	2.74623549830079e-06	0.999998746863541	64	192	ubiquitin protein ligase activity	MF

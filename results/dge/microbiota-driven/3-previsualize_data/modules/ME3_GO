@@ -1,0 +1,2 @@
+category	over_represented_pvalue	under_represented_pvalue	numDEInCat	numInCat	term	ontology
+GO:0031981	1.14623980484136e-06	0.999999517622748	364	2701	nuclear lumen	CC
